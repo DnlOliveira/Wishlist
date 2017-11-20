@@ -27,7 +27,7 @@ class Main extends Component {
     }
     else {
       return (
-        <div className='nav'>
+        <div className='container-fluid nav'>
           <div id='logo'>
             <a href='#'>Wishlists</a>
           </div>

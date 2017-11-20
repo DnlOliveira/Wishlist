@@ -6,7 +6,17 @@ class List extends Component {
   render() {
     return (
       <div>
-        list component
+        <div>
+          <div>thumbnail</div>
+          <h1>{this.props.match.params.name}</h1>
+        </div>
+
+        <div>
+          <ul>
+            
+          </ul>
+        </div>
+        
       </div>
     );
   }

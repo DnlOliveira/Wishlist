@@ -17,7 +17,7 @@ class Login extends Component {
 
   render() {
     return (
-      <div className='container-fluid' id='#login-wrap'>
+      <div className='container-fluid' id='login-wrap'>
         <div id='login-box'>
           <span>Login</span>
           <form onSubmit={this.handleLogin}>

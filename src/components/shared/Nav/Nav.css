@@ -1,0 +1,18 @@
+#navi {
+    width: 80%;
+    border-style: solid;
+    display: flex;
+    justify-content: center;
+}
+#navi ul{
+    padding: 0;
+    border-style: solid;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+}
+#navi li{
+    border-style: solid;
+    margin: 15px;
+}
