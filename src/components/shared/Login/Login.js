@@ -11,7 +11,7 @@ class Login extends Component {
 
     console.log("login submitted")
 
-    window.location.replace("/home");
+    window.location.replace("/home/family");
 
   }
 

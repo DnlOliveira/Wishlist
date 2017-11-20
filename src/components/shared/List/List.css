@@ -1,0 +1,31 @@
+#list{
+    border-style: solid;
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#list-title{
+    border-style: solid;
+    display: flex;
+}
+#list-items{
+    
+}
+#list-add{
+    border-style: solid;
+    display: flex;
+    flex-direction: column;
+}
+#list-add span{
+    display: flex;
+}
+
+
+.regular{
+    background-color: #000;
+}
+
+.modified{
+    background-color: #e5223f;
+}
