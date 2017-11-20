@@ -1,0 +1,23 @@
+.nav {
+  background-color: #17225a;
+  display: flex;
+  height: 100px;
+}
+#logo{
+  /*border-style: solid;*/
+  flex-grow: 1;
+  color: #fff;
+}
+#logo a{
+  color: #fff;
+  text-decoration: none;
+}
+#log-status{
+  /*border-style: solid;*/
+  flex-grow: 1;
+  text-align: right;
+}
+#log-status a{
+  color: #fff;
+  text-decoration: none;
+}
