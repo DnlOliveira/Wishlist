@@ -3,16 +3,34 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 
 import './Login.css';
 
+import utils from '../../../helpers/utils';
+
 
 class Login extends Component {
 
   handleLogin(event) {
     event.preventDefault();
 
-    console.log("login submitted")
+    let user = event.target.username.value;
+    let pass = event.target.password.value;
+    const cred = {
+      "user": user,
+      "pass": pass
+    }
 
-    window.location.replace("/home/family");
+    utils.checkCred(user)
+    .then( (response) => {
+      console.log(response)
+      let dbpass = response.data.credentials.password;
 
+      if (dbpass === pass) {
+        window.location.replace("/home/family");
+      }
+      else {
+        alert ("wrong password");
+      }
+
+    });
   }
 
   render() {

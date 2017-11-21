@@ -10,7 +10,10 @@ import Content from '../shared/Content/Content';
 const Home = () => (
   <div className='container-fluid' id='home'>
     <Header />
-    <Content />
+
+    <div id='content-holder'>
+      <Content />
+    </div>
   </div>
 )
 

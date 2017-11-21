@@ -12,10 +12,20 @@ class ListGroups extends Component {
   }
 
   render() {
+    
     return (
       <div id='list-group'>
         <span>Wishlists</span>
-        <Link to={ `/home/list/${this.state.name}` }><PersonCard /></Link>
+        {this.props.users.map( (res, i) => {
+          return (
+            <div className='row'>
+              <div className='col-md-12'>
+                <Link to={ `/home/list/${this.props.users[i].credentials.username}` }><PersonCard key={this.props.users[i]._id} users={this.props.users[i]} /></Link>
+              </div>
+            </div>
+          )
+        })}
+        
       </div>
     );
   }

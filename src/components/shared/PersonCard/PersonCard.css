@@ -1,11 +1,17 @@
 #person-card{
     border-style: solid;
-    width: 50%;
+    width: 100%;
 }
 #card-wrapper{
+    border-style: solid;
     display: flex;
 }
 #avatar{
     width: 50px;
     height: 50px;
+}
+#name-wrap{
+    padding: 10px;
+    display: flex;
+    align-items: center;
 }

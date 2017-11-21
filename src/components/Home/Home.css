@@ -1,5 +1,16 @@
 #home{
     padding: 0;
     border-style: solid;
-    height: 100vh;
+    width: 100%;
+    height: 100vh;;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#content-holder{
+    border-style: solid;
+    width: 80%;
+    height: 100%;
+    display: flex;
+    align-items: center;
 }
