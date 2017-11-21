@@ -11,6 +11,10 @@ class Login extends Component {
   handleLogin(event) {
     event.preventDefault();
 
+    this.props.setState({
+      user: user
+    });
+
     let user = event.target.username.value;
     let pass = event.target.password.value;
     const cred = {

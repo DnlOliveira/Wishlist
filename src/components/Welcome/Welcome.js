@@ -6,11 +6,19 @@ import './Welcome.css';
 import Header from '../shared/Header/Header';
 import Login from '../shared/Login/Login';
 
-const Welcome = () => (
-  <div className='container-fluid' id='welcome'>
-    <Header />
-    <Login />
-  </div>
-)
+
+class Welcome extends Component {
+  state = {
+    user: ''
+  }
+  render() {
+    return (
+      <div className='container-fluid' id='welcome'>
+        <Header />
+        <Login />
+      </div>
+    )
+  }
+}
 
 export default Welcome
