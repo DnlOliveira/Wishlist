@@ -13,7 +13,8 @@ import utils from '../../../helpers/utils';
 class Content extends Component {
 
   state = {
-    users: []
+    users: [],
+    list: ''
   }
 
   componentDidMount() {
@@ -32,14 +33,22 @@ class Content extends Component {
     })
   }
 
+  listUpdate(list) {
+    this.setState({
+      list: list
+    })
+  }
+
   render() {
     return (
       <div id='content'>
-        <Nav />
+        <Nav LoggedUser={this.props.LoggedUser} />
         <Route exact path='/home/family' render={ val => {
-          return <ListGroups users={this.state.users} />
+          return <ListGroups listUpdate={this.listUpdate.bind(this)} users={this.state.users} />
         }} />
-        <Route exact path='/home/list/:name' component={ List } />
+        <Route exact path='/home/list/:name' render={ val => {
+          return <List users={this.state.users} />
+        }} />
       </div>
     );
   }

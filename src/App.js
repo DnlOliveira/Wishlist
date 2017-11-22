@@ -6,17 +6,38 @@ import './App.css';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 // Components
+import Header from './components/shared/Header/Header';
 import Welcome from './components/Welcome/Welcome';
 import Home from './components/Home/Home';
 
 class App extends Component {
+
+  state = {
+    LoggedUser: ''
+  }
+
+  componentDidUpdate() {
+    console.log(this.state.LoggedUser);
+  }
+
+  updateState(user) {
+    this.setState({
+      LoggedUser: user
+    });
+  }
+
   render() {
     return (
       <div className='container-fluid' id='main-wrap'>
         <Router>
           <div>
-            <Route exact path='/' component={ Welcome } />
-            <Route path='/home' component= { Home } />
+            <Header LoggedUser={this.state.LoggedUser} />
+            <Route exact path='/' render={ data => {
+              return <Welcome updateState={this.updateState.bind(this)} />
+            }} />
+            <Route path='/home' render= { data => {
+              return <Home LoggedUser={this.state.LoggedUser} />
+            } } />
           </div>
         </Router>
       </div>

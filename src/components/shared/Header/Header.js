@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 // css
 import './Header.css';
 
-class Main extends Component {
+class Header extends Component {
   constructor(){
     super();
     this.state = {
@@ -29,7 +29,7 @@ class Main extends Component {
       return (
         <div className='container-fluid nav'>
           <div id='logo'>
-            <a href='#'>Wishlists</a>
+            <a href='/home/family'>Wishlists</a>
           </div>
 
           <div id='log-status'>
@@ -41,6 +41,6 @@ class Main extends Component {
 
   } // render function
 
-} // Class Main
+} // Class Header
 
-export default Main
+export default Header

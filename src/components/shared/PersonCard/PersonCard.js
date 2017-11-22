@@ -6,13 +6,12 @@ import './PersonCard.css';
 
 class PersonCard extends Component {
   render() {
-    console.log(this.props)
     return (
       <div id='person-card'>
         <div id='card-wrapper'>
           <div id='avatar'></div>
           <div id='name-wrap'>
-            <span>fName Lname</span>
+            <span>{`${this.props.user.firstName} ${this.props.user.lastName}`}</span>
           </div>
         </div>
       </div>

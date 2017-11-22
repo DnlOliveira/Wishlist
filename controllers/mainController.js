@@ -35,15 +35,22 @@ router.post('/api/newitem', (req, res) => {
 })
 
 router.get('/api/checkCred', (req, res) => {
-    var user = req.query.user;
-
-    var value;
+    var user = JSON.parse(req.query.user);
 
     People.findOne({
-        "credentials.username" : user
+        "credentials.username" : user.user
     },
     (err, response) => {
-        res.send(response);      
+        if (response) {
+            if (user.pass == response.credentials.password) {
+                res.send(response);
+            } else {
+                res.send({error: "Wrong Password"});
+            }
+        }
+        else {
+            res.send({error: "No Such Username"});
+        }             
     })
     
 })

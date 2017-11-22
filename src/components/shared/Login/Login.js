@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import { Redirect } from 'react-router'
 
 import './Login.css';
 
@@ -7,46 +8,50 @@ import utils from '../../../helpers/utils';
 
 
 class Login extends Component {
+  state = {
+    fireRedirect: false
+  }
 
   handleLogin(event) {
-    event.preventDefault();
-
-    this.props.setState({
-      user: user
-    });
+    event.preventDefault();   
 
     let user = event.target.username.value;
     let pass = event.target.password.value;
     const cred = {
-      "user": user,
-      "pass": pass
+      user: user,
+      pass: pass
     }
 
-    utils.checkCred(user)
+    utils.checkCred(cred)
     .then( (response) => {
-      console.log(response)
-      let dbpass = response.data.credentials.password;
 
-      if (dbpass === pass) {
-        window.location.replace("/home/family");
+      let err = response.data.error;
+      if (err) {
+        alert(err);
       }
       else {
-        alert ("wrong password");
+        this.props.updateState(response);
+        this.setState({fireRedirect: true});
       }
 
     });
   }
 
   render() {
+    const { fireRedirect } = this.state;
+
     return (
       <div className='container-fluid' id='login-wrap'>
         <div id='login-box'>
           <span>Login</span>
-          <form onSubmit={this.handleLogin}>
-            <input type='text' placeholder='Username' name='username' />
-            <input type='text' placeholder='Password' name='password' />
+          <form onSubmit={this.handleLogin.bind(this)}>
+            <input type='text' placeholder='Username' name='username' required />
+            <input type='text' placeholder='Password' name='password' required />
             <button type='submit'>Login</button>
           </form>
+          {fireRedirect && (
+            <Redirect to={'/home/family'} />
+          )}         
         </div>
       </div>
     );

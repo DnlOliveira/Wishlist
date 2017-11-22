@@ -7,9 +7,6 @@ import PersonCard from '../PersonCard/PersonCard';
 
 
 class ListGroups extends Component {
-  state = {
-    name: "Daniel"
-  }
 
   render() {
     
@@ -20,7 +17,9 @@ class ListGroups extends Component {
           return (
             <div className='row'>
               <div className='col-md-12'>
-                <Link to={ `/home/list/${this.props.users[i].credentials.username}` }><PersonCard key={this.props.users[i]._id} users={this.props.users[i]} /></Link>
+                <Link to={ `/home/list/${this.props.users[i].credentials.username}` }>
+                  <PersonCard listUpdate={this.props.listUpdate} key={this.props.users[i]._id} user={this.props.users[i]} />
+                </Link>
               </div>
             </div>
           )

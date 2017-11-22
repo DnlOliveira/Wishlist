@@ -11,6 +11,7 @@ class List extends Component {
     super(props);
     this.handleAddNew = this.handleAddNew.bind(this);
     this.handleSave = this.handleSave.bind(this);
+    console.log(this.props.location)
   }
 
   state = {
@@ -63,7 +64,7 @@ class List extends Component {
       <div id='list'>
         <div id='list-title'>
           <div>thumbnail</div>
-          <h1>{this.props.match.params.name}</h1>
+          {/* <h1>{this.props.match.params.name}</h1> */}
         </div>
 
         <div id='list-items'>
