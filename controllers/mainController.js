@@ -4,6 +4,17 @@ var path = require('path');
 
 var People = require('../models/People');
 
+var multer = require('multer');
+var Storage = multer.diskStorage({
+    destination: function(req, file, callback) {
+        callback(null, './Images');
+    },
+    filename: function(req, file, callback) {
+        callback(null, file.fieldname + '-' + Date.now() )
+    }
+});
+var upload = multer({ storage: Storage });
+
 router.get('/', (req, res) => {
     res.sendFile(__dirname + '../public/index.html');
 });

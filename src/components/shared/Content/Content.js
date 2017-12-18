@@ -24,19 +24,14 @@ class Content extends Component {
 
       res.data.forEach( object => {
         arr.push(object);
-      })
-
-      this.setState({
-        users: arr
       });
 
-    })
+      this.setState({ users: arr });
+    });
   }
 
   listUpdate(list) {
-    this.setState({
-      list: list
-    })
+    this.setState({ list: list });
   }
 
   render() {

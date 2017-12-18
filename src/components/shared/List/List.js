@@ -68,9 +68,7 @@ class List extends Component {
         </div>
 
         <div id='list-items'>
-          <ul>
-            
-          </ul>
+          
         </div>
 
         <div id='list-add'>
